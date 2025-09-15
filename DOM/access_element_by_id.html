@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = 'heading'>Hello World!</h1>
+    <p id="para">This is a paragraph</p>
+    <script>
+        //Access element by ID
+        let headingElement  = document.getElementById("heading");
+        let paraElement = document.getElementById("para");
+        
+        //Change text content
+        headingElement.innerHTML = "Welcome to DOM!";
+        paraElement.style.color = "blue"; //Chnage text color
+    </script>
+</body>
+</html>
