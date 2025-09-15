@@ -6,12 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 id = "title">Hello, DOM Styling!</h2>
+    <h2 id = "heading">Hello, DOM Styling!</h2>
     <button onclick="showAlert()">Alert</button>
-    <button onclick = "toggleHighlight()">Toggle Highlight</button>
+    <button onclick = "changeStyle()">Change Style</button>
     <script>
         function showAlert(){
             alert("This is me!");
+        }
+        function changeStyle(){
+            heading.style.color ="blue"; //text color
+            heading.style.fontSize = "30px"; // sets font size
+
+            // Add a class
+            heading.classList.add("redText");
         }
     </script>
 </body>
