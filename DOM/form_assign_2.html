@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+</head>
+<body>
+  <h2>Form Example</h2>
+
+  <form id="form" action="/submit" method="post">
+    <!-- Name input -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br><br>
+
+    <!-- Email input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+
+    <!-- Phone input -->
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone">
+    <br><br>
+
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      // Prevent submission ONLY when all fields are empty
+      if (name === "" && email === "" && phone === "") {
+        event.preventDefault();
+        alert("Please fill at least one field before submitting.");
+        return false;
+      }
+
+      // Otherwise allow submission
+      alert("Form submitted successfully!");
+    });
+  </script>
+</body>
+</html>
