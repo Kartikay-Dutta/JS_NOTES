@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Strength Checker</title>
+</head>
+<body>
+  <h2>Password Strength Form</h2>
+
+  <form id="form" action="/submit" method="post">
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+    <br><br>
+
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop submission until checks pass
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Check length
+      if (password.length < 8) {
+        alert("Password must be at least 8 characters long");
+        return false;
+      }
+
+      // Check at least one number
+      const numberPattern = /\d/; // regex for digits
+      if (!numberPattern.test(password)) {
+        alert("Password must contain at least one number");
+        return false;
+      }
+
+      // Check confirm password match
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      // All checks passed
+      alert("Password is strong and form submitted successfully!");
+      this.submit(); // actually submit form
+    });
+  </script>
+</body>
+</html>
