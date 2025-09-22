@@ -1,0 +1,10 @@
+{
+    "users":[
+        {"id":1,"name": "John", "age": 25},
+        {"id":2,"name": "Anitha", "age": 30}
+    ],
+    "posts":[
+        { "id": 1,"title": "First Post","author": "John"},
+        { "id": 1,"title": "First Post","author": "John"}
+    ]
+}
