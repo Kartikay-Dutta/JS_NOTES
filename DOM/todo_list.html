@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Todo List</title>
+</head>
+<body>
+  <h2>Todo List</h2>
+
+  <input id="todoInput" type="text" placeholder="Enter task">
+  <button id="addBtn">Add</button>
+
+  <ul id="todoList"></ul>
+
+  <script>
+    const addBtn = document.getElementById("addBtn");
+    const todoInput = document.getElementById("todoInput");
+    const todoList = document.getElementById("todoList");
+
+    addBtn.onclick = function() {
+      const task = todoInput.value;
+
+      if (task === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = task;
+
+      // Delete button
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+
+      delBtn.onclick = function() {
+        todoList.removeChild(li);
+      };
+
+      li.appendChild(delBtn);
+      todoList.appendChild(li);
+
+      todoInput.value = "";
+    };
+  </script>
+</body>
+</html>
